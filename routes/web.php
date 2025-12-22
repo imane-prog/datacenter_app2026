@@ -30,3 +30,9 @@ Route::get('/reservations', function () {
 Route::get('/admin', function () {
     return '<h1>Administration (à faire par Personne 4)</h1>';
 });
+Route::get('/catalogue', [App\Http\Controllers\ResourceController::class, 'index']);
+Route::post('/resources/store', [App\Http\Controllers\ResourceController::class, 'store']);
+Route::get('/resources/edit/{id}', [App\Http\Controllers\ResourceController::class, 'edit']);
+Route::post('/resources/update/{id}', [App\Http\Controllers\ResourceController::class, 'update']);
+Route::get('/resources/delete/{id}', [App\Http\Controllers\ResourceController::class, 'destroy']);
+Route::get('/resources/show/{id}', [App\Http\Controllers\ResourceController::class, 'show']);
